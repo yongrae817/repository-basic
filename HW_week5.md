@@ -47,65 +47,55 @@ $$
 
 ---
 
-## (c) 상태미분방정식을 행렬 형태로 구하라.
+## (c) 상태미분방정식을 구하라.
+
+상태벡터와 입력/출력은 다음과 같이 둔다.
 
 $$
-\dot{x}_1(t) = x_2(t)
+\mathbf{x}(t)=
+\begin{bmatrix}
+x_1(t)\\
+x_2(t)
+\end{bmatrix},
+\qquad
+u(t)=F(t),
+\qquad
+y(t)=x_1(t)
 $$
 
-$$
-\dot{x}_2(t) = -\frac{k}{M}x_1(t) - \frac{b}{M}x_2(t) + \frac{1}{M}F(t)
-$$
-
-이 두 식이 시스템의 상태미분방정식이며, 각각은 질량의 운동 방정식을 1차 형태로 표현한 것이다.
-
-출력 방정식은 다음과 같다.
+그때 상태미분방정식(선형, 시간불변 LTI)은
 
 $$
-y(t) = x_1(t)
+\dot{\mathbf{x}}(t)=A\,\mathbf{x}(t)+B\,u(t),
+\qquad
+y(t)=C\,\mathbf{x}(t)+D\,u(t)
 $$
 
----
-
-## 상태공간 모델 요약
-
-$$
-\dot{x}(t)=A\,x(t)+B\,u(t), \qquad
-y(t)=C\,x(t)+D\,u(t)
-$$
-
-여기서,
+여기서 행렬 \(A,B,C,D\) 는
 
 $$
 A=
 \begin{bmatrix}
 0 & 1\\
 -\dfrac{k}{M} & -\dfrac{b}{M}
-\end{bmatrix},\quad
+\end{bmatrix},
+\qquad
 B=
 \begin{bmatrix}
 0\\[2pt]
 \dfrac{1}{M}
-\end{bmatrix},\quad
+\end{bmatrix},
+\qquad
 C=
 \begin{bmatrix}
 1 & 0
-\end{bmatrix},\quad
+\end{bmatrix},
+\qquad
 D=
 \begin{bmatrix}
 0
 \end{bmatrix}.
 $$
 
-
 ---
 
-## 요약
-| 구분 | 식 | 의미 |
-|------|----|------|
-| 운동방정식 | \(M\ddot{y} + b\dot{y} + ky = F(t)\) | 시스템의 동적 특성 |
-| 상태변수 | \(x_1 = y, \; x_2 = \dot{y}\) | 변위, 속도 |
-| 상태방정식 | \(\dot{x}_1 = x_2,\; \dot{x}_2 = -\frac{k}{M}x_1 - \frac{b}{M}x_2 + \frac{1}{M}F(t)\) | 1차 미분형 |
-| 행렬 형태 | \(A, B, C, D\) | 상태공간 모델 |
-
---- 
