@@ -90,3 +90,132 @@ $$
 
 ---
 
+# P3.3
+그림 P3.3과 같은 RLC 회로가 주어졌다.  
+상태변수를 다음과 같이 설정하고 상태미분방정식을 구하라.
+
+\[
+x_1(t) = i_L(t), \quad x_2(t) = v_C(t)
+\]
+
+---
+
+## 회로 설명
+
+- 입력: \( v_i(t) \)
+- 출력: \( v_o(t) = v_C(t) \)
+- 인덕터 전류: \( i_L(t) \)
+- 커패시터 전압: \( v_C(t) \)
+
+회로 구성은 직렬 R–L–C 구조이며,  
+전압방정식(KVL)은 다음과 같다.
+
+$$
+v_i(t) = L\frac{di_L(t)}{dt} + R i_L(t) + v_C(t)
+$$
+
+커패시터의 전류관계는
+
+$$
+i_C(t) = C\frac{dv_C(t)}{dt}
+$$
+
+이며, 인덕터 전류와 커패시터 전류의 관계는
+
+$$
+i_L(t) = i_C(t)
+$$
+
+---
+
+## 상태변수로 표현된 1차 미분방정식
+
+위 식들을 상태변수 \(x_1 = i_L(t)\), \(x_2 = v_C(t)\) 로 바꾸면,
+
+1️. 인덕터 전류 미분식  
+$$
+L\frac{dx_1(t)}{dt} = v_i(t) - R x_1(t) - x_2(t)
+$$
+$$
+\Rightarrow \dot{x}_1(t) = -\frac{R}{L}x_1(t) - \frac{1}{L}x_2(t) + \frac{1}{L}v_i(t)
+$$
+
+2️. 커패시터 전압 미분식  
+$$
+i_C(t) = C\frac{dx_2(t)}{dt} = i_L(t)
+$$
+$$
+\Rightarrow \dot{x}_2(t) = \frac{1}{C}x_1(t)
+$$
+
+---
+
+## 상태미분방정식 (State–Space Form)
+
+이를 행렬 형태로 정리하면 다음과 같다.
+
+$$
+\begin{bmatrix}
+\dot{x}_1(t)\\
+\dot{x}_2(t)
+\end{bmatrix}
+=
+\begin{bmatrix}
+-\dfrac{R}{L} & -\dfrac{1}{L}\\[6pt]
+\dfrac{1}{C} & 0
+\end{bmatrix}
+\begin{bmatrix}
+x_1(t)\\
+x_2(t)
+\end{bmatrix}
++
+\begin{bmatrix}
+\dfrac{1}{L}\\[6pt]
+0
+\end{bmatrix}
+v_i(t)
+$$
+
+출력 방정식은 \(y(t)=v_C(t)=x_2(t)\) 이므로,
+
+$$
+y(t)=
+\begin{bmatrix}
+0 & 1
+\end{bmatrix}
+\begin{bmatrix}
+x_1(t)\\
+x_2(t)
+\end{bmatrix}
++ [0]v_i(t)
+$$
+
+---
+
+## 상태공간 행렬 요약
+
+$$
+A=
+\begin{bmatrix}
+-\dfrac{R}{L} & -\dfrac{1}{L}\\[6pt]
+\dfrac{1}{C} & 0
+\end{bmatrix},
+\quad
+B=
+\begin{bmatrix}
+\dfrac{1}{L}\\[6pt]
+0
+\end{bmatrix},
+\quad
+C=
+\begin{bmatrix}
+0 & 1
+\end{bmatrix},
+\quad
+D=
+\begin{bmatrix}
+0
+\end{bmatrix}.
+$$
+
+---
