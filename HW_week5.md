@@ -82,10 +82,9 @@ A=
 \qquad
 B=
 \begin{bmatrix}
-0\\[2pt]
+0\\
 \dfrac{1}{M}
-\end{bmatrix},
-\qquad
+\end{bmatrix},\quad
 C=
 \begin{bmatrix}
 1 & 0
@@ -94,7 +93,7 @@ C=
 D=
 \begin{bmatrix}
 0
-\end{bmatrix}.
+\end{bmatrix}
 $$
 
 ---
