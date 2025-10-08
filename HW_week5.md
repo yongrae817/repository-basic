@@ -4,6 +4,8 @@
 (b) 상태변수로 표현된 1차 미분방정식을 구하라.  
 (c) 상태미분방정식을 행렬 형태로 구하라.
 
+<img width="599" height="292" alt="image" src="https://github.com/user-attachments/assets/e9bc0cb0-4f3d-49ca-8004-41af73e6f041" />
+
 ---
 
 ## (a) 적당한 상태변수를 설정하라.
@@ -27,7 +29,7 @@ $$
 x_1(t)=y(t), \qquad x_2(t)=\dot{y}(t)
 $$
 
-2차 미분 방정식이므로 상태변수를 2개 설정해야한다.
+**2차 미분 방정식이므로 상태변수를 2개 설정해야한다.**
 
 ---
 
@@ -68,10 +70,9 @@ $$
 $$
 \dot{\mathbf{x}}(t)=A\,\mathbf{x}(t)+B\,u(t),
 \qquad
-y(t)=C\,\mathbf{x}(t)+D\,u(t)
 $$
 
-여기서 행렬 \(A,B,C,D\) 는
+여기서 행렬 \(A,B\) 는
 
 $$
 A=
@@ -85,15 +86,6 @@ B=
 0\\
 \dfrac{1}{M}
 \end{bmatrix},\quad
-C=
-\begin{bmatrix}
-1 & 0
-\end{bmatrix},
-\qquad
-D=
-\begin{bmatrix}
-0
-\end{bmatrix}
 $$
 
 ---
