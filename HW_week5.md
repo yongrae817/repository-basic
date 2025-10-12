@@ -164,7 +164,7 @@ $$
 $$ 
 \begin{bmatrix} 
 \dot{x}_1 \ \dot{x}_2 
-\end{bmatrix}
+\end{bmatrix} =
 \begin{bmatrix}
 0 & \frac{1}{L} \\
 -\frac{1}{C} & -\frac{1}{RC}
