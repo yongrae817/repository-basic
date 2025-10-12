@@ -161,12 +161,10 @@ $$
 
 상태방정식은 다음과 같다.
 
-$$
-\begin{bmatrix}
-\dot{x}_1 \\
-\dot{x}_2
+$$ 
+\begin{bmatrix} 
+\dot{x}_1 \ \dot{x}_2 
 \end{bmatrix}
-=
 \begin{bmatrix}
 0 & \frac{1}{L} \\
 -\frac{1}{C} & -\frac{1}{RC}
