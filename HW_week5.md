@@ -168,8 +168,8 @@ $$
 \end{bmatrix}
 =
 \begin{bmatrix}
-0 & \frac{1}{L} \\
--\frac{1}{C} & -\frac{1}{RC}
+0 & \dfrac{1}{L} \\
+-\dfrac{1}{C} & -\dfrac{1}{RC}
 \end{bmatrix}
 \begin{bmatrix}
 x_1 \\
@@ -177,8 +177,8 @@ x_2
 \end{bmatrix}
 +
 \begin{bmatrix}
-\frac{1}{L} & -\frac{1}{L} \\
-0 & \frac{1}{RC}
+\dfrac{1}{L} & -\dfrac{1}{L} \\
+0 & \dfrac{1}{RC}
 \end{bmatrix}
 \begin{bmatrix}
 v_1 \\
