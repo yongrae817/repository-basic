@@ -122,20 +122,20 @@ $$
 인덕터 KVL
 
 $$
-L\,\dot x_1 = v_1 - v_A = v_1 - (v_2 - x_2)
+L\\dot x_1 = v_1 - v_A = v_1 - (v_2 - x_2)
 $$
 
 즉
 
 $$
-\dot x_1 = \frac{1}{L}\,\big(x_2 + v_1 - v_2\big)
+\dot x_1 = \frac{1}{L}\\big(x_2 + v_1 - v_2\big)
 $$
 
 노드 A의 KCL \(($i_L=i_R+i_C$)\)
 
 $$
-i_R=\frac{v_N}{R}=\frac{v_2-x_2}{R},\quad
-i_C=C\,\frac{d}{dt}(v_N - v_2)=-C\,\dot x_2
+i_R=\frac{v_N}{R}=\frac{v_2-x_2}{R}\quad
+i_C=C\\frac{d}{dt}(v_N - v_2)=-C\\dot x_2
 $$
 
 따라서
