@@ -202,4 +202,7 @@ $$
 # P3.5
 그림 P3.5에 폐루프 제어시스템이 주어져 있다.
 (a) 폐루프 전달함수 $T(s)=Y(s)/R(s)$를 구하라.
-(b) 상태변수 모델을 구하고 위상변수형 블록선도를 작성하라.(이번 과제에선 블록선도 없이 )
+(b) 상태변수 모델을 구하고 위상변수형 블록선도를 작성하라.(이번 과제에선 블록선도 없이 *phase variable form*으로 답을 구한다.)
+<img width="890" height="261" alt="image" src="https://github.com/user-attachments/assets/af109f29-9f52-4172-9026-ddb1476b581a" />
+
+---
