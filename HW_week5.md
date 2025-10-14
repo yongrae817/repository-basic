@@ -68,7 +68,7 @@ $$
 그때 상태미분방정식(선형, 시간불변 LTI)은
 
 $$
-\dot{\mathbf{x}}(t)=A\\mathbf{x}(t)+Bu(t),
+\dot{\mathbf{x}}(t)=A\\mathbf{x}(t)+Bu(t)
 \qquad
 $$
 
@@ -86,6 +86,19 @@ B=
 0\\
 \dfrac{1}{M}
 \end{bmatrix}\quad
+$$
+
+이때 출력방정식은
+
+$$
+\\mathbf{y}(t)=C\\mathbf{x}(t)+Du(t)
+\qquad
+$$
+
+여기서 행렬 \(C,D\) 는
+
+$$
+C=\begin{bmatrix}1 & 0\end{bmatrix}, \qquad D=\begin{bmatrix}0\end{bmatrix}
 $$
 
 ---
