@@ -116,13 +116,13 @@ $$
 노드 전압 정의
 
 $$
-v_N(t)=v_2(t)-x_2(t)
+v_A(t)=v_2(t)-x_2(t)
 $$
 
 인덕터 KVL
 
 $$
-L\,\dot x_1 = v_1 - v_N = v_1 - (v_2 - x_2)
+L\,\dot x_1 = v_1 - v_A = v_1 - (v_2 - x_2)
 $$
 
 즉
@@ -131,7 +131,7 @@ $$
 \dot x_1 = \frac{1}{L}\,\big(x_2 + v_1 - v_2\big)
 $$
 
-노드 N의 KCL \((i_L=i_R+i_C)\)
+노드 A의 KCL \(($i_L=i_R+i_C$)\)
 
 $$
 i_R=\frac{v_N}{R}=\frac{v_2-x_2}{R},\quad
@@ -190,33 +190,6 @@ x_2
 \begin{bmatrix}
 \frac{1}{L} & -\frac{1}{L} \\
 0 & \frac{1}{RC}
-\end{bmatrix}
-\begin{bmatrix}
-v_1 \\
-v_2
-\end{bmatrix}
-$$
-
-출력은 다음과 같다.
-
-$$
-y(t) = v_C(t) = x_2(t)
-$$
-
-따라서,
-
-$$
-y(t) =
-\begin{bmatrix}
-0 & 1
-\end{bmatrix}
-\begin{bmatrix}
-x_1 \\
-x_2
-\end{bmatrix}
-+
-\begin{bmatrix}
-0 & 0
 \end{bmatrix}
 \begin{bmatrix}
 v_1 \\
