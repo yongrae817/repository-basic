@@ -85,7 +85,7 @@ B=
 \begin{bmatrix}
 0\\
 \dfrac{1}{M}
-\end{bmatrix},\quad
+\end{bmatrix}\quad
 $$
 
 ---
