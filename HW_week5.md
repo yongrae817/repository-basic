@@ -79,7 +79,7 @@ A=
 \begin{bmatrix}
 0 & 1\\
 -\dfrac{k}{M} & -\dfrac{b}{M}
-\end{bmatrix},
+\end{bmatrix}
 \qquad
 B=
 \begin{bmatrix}
