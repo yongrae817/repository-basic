@@ -119,10 +119,11 @@ $$
 v_A(t)=v_2(t)-x_2(t)
 $$
 
-인덕터 KVL
+**KVL 사용**
 
 $$
-L\\dot x_1 = v_1 - v_A = v_1 - (v_2 - x_2)
+v_A(t)=v_2(t)-v_c(t)
+v_A(t)=v_1(t)-L\\dot x_1
 $$
 
 즉
@@ -131,7 +132,7 @@ $$
 \dot x_1 = \frac{1}{L}\\big(x_2 + v_1 - v_2\big)
 $$
 
-노드 A의 KCL \(($i_L=i_R+i_C$)\)
+**KCL 사용**
 
 $$
 i_R=\frac{v_N}{R}=\frac{v_2-x_2}{R}\quad
@@ -141,7 +142,7 @@ $$
 따라서
 
 $$
-x_1=\frac{v_2-x_2}{R}-C\,\dot x_2
+x_1=\frac{v_2-x_2}{R}-C\\dot x_2
 \quad\Rightarrow\quad
 \dot x_2=\frac{1}{RC}(v_2-x_2)-\frac{1}{C}x_1
 $$
@@ -175,9 +176,7 @@ $$
 상태방정식은 다음과 같다.
 
 $$ 
-\begin{bmatrix} 
-\dot{x}_1 \ \dot{x}_2 
-\end{bmatrix} =
+\dot{\mathbf{x}}(t)=
 \begin{bmatrix}
 0 & \frac{1}{L} \\
 -\frac{1}{C} & -\frac{1}{RC}
@@ -202,7 +201,121 @@ $$
 # P3.5
 그림 P3.5에 폐루프 제어시스템이 주어져 있다.
 (a) 폐루프 전달함수 $T(s)=Y(s)/R(s)$를 구하라.
-(b) 상태변수 모델을 구하고 위상변수형 블록선도를 작성하라.(이번 과제에선 블록선도 없이 *phase variable form*으로 답을 구한다.)
+(b) 상태변수 모델을 구하고 위상변수형 블록선도를 작성하라.(이번 과제에선 블록선도 없이 **phase variable form**으로 답을 구한다.)
 <img width="890" height="261" alt="image" src="https://github.com/user-attachments/assets/af109f29-9f52-4172-9026-ddb1476b581a" />
 
 ---
+
+## (a) 폐루프 전달함수 $T(s)=Y(s)/R(s)$를 구하라.
+
+주어진 시스템의 구성요소는 다음과 같다.
+
+$$
+G_c(s) = \frac{s+2}{s+8}, \qquad 
+G_p(s) = \frac{1}{s(s-3)}, \qquad 
+H(s) = 1
+$$
+
+주어진 블록선도를 등가변환 하면 다음과 같다.
+
+$$
+R(s) \rightarrow \frac{s+2}{s+8}*frac{1}{s-3}*frac{1}{s} \rightarrow Y(s)
+$$
+
+따라서 폐루프 제어함수는 다음과 같이 구할 수 있다.
+
+$$
+T(s) = \frac{Y(s)}{R(s)} 
+= \frac{s + 2}{(s + 8)(s - 3)s} 
+= \frac{s + 2}{s^3 + 5s^2 - 24s}
+$$
+
+---
+
+## (b) 상태변수 모델을 구하고 위상변수형 블록선도를 작성하라.
+위에서 구한 전달함수 $T(s)$는 다음과 같이 표현할 수 있다.
+$$
+T(s) = \fracY(s)R(s) \frac{s + 2}{s^3 + 5s^2 - 24s} \cdot \frac{Z(s)}{Z(s)}
+$$
+따라서 다음과 같이 볼 수 있다.
+$$
+Y(s) = (s + 2) Z(s)
+$$
+
+$$
+R(s) = (s^3 + 5s^2 - 24s) Z(s)
+$$
+
+이를 라플라스 역변환하면,
+
+$$
+Y(t) = \ddot{z}(t) + 2\dot{z}(t)
+$$
+
+$$
+R(t) = \dddot{z}(t) + 5\ddot{z}(t) - 24\dot{z}(t)
+$$
+
+따라서 다음과 같이 표현할 수 있다.
+
+$$
+\mathbf{x}(t) =
+\begin{bmatrix}
+x_1(t)\\
+x_2(t)\\
+x_3(t)
+\end{bmatrix}
+=\begin{bmatrix}
+z(t)\\
+\dot{x}(t)\\
+\ddot{x}(t)
+\end{bmatrix}
+=\begin{bmatrix}
+z(t)\\
+\dot{z}(t)\\
+\ddot{z}(t)
+\end{bmatrix}
+$$
+
+---
+
+$$
+\dot{x}_3(t) = \dddot{z}(t)
+$$
+
+$$
+\dddot{z}(t) = -5\ddot{z}(t) + 24\dot{z}(t) + r(t)
+$$
+
+---
+
+출력방정식은 다음과 같다.
+
+$$
+y(t) = 2x_1(t) + x_2(t)
+$$
+
+---
+
+상태방정식은 다음과 같다.
+
+$$
+\dot{\mathbf{x}}(t) =
+\begin{bmatrix}
+0 & 1 & 0\\
+0 & 0 & 1\\
+0 & 24 & -5
+\end{bmatrix}
+\begin{bmatrix}
+x_1(t)\\
+x_2(t)\\
+x_3(t)
+\end{bmatrix}
++
+\begin{bmatrix}
+0\\
+0\\
+1
+\end{bmatrix}r(t)
+$$
+
