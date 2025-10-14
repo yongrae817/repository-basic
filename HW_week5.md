@@ -68,7 +68,7 @@ $$
 그때 상태미분방정식(선형, 시간불변 LTI)은
 
 $$
-\dot{\mathbf{x}}(t)=A\,\mathbf{x}(t)+B\,u(t),
+\dot{\mathbf{x}}(t)=A\\mathbf{x}(t)+Bu(t),
 \qquad
 $$
 
