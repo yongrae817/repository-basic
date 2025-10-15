@@ -614,7 +614,7 @@ X(s) = [sI - A]^{-1} BU(s) \text{ 에서, } \Phi(s) = [sI - A]^{-1}
 $$  
 
 $$
-Phi(s) = 
+\Phi(s) = 
 \begin{bmatrix}
 s-1 & -1 & 1 \\
 -4 & s-3 & 0 \\
@@ -623,10 +623,10 @@ s-1 & -1 & 1 \\
 \begin{bmatrix}
 \dfrac{s^2 - 13s + 30}{s^3 - 14s^2 + 37s + 20} &
 \dfrac{s - 11}{s^3 - 14s^2 + 37s + 20} &
-\dfrac{-s + 3}{s^3 - 14s^2 + 37s + 20} \\[10pt]
+\dfrac{-s + 3}{s^3 - 14s^2 + 37s + 20} \\
 \dfrac{4s - 40}{s^3 - 14s^2 + 37s + 20} &
 \dfrac{s^2 - 11s + 8}{s^3 - 14s^2 + 37s + 20} &
-\dfrac{-4}{s^3 - 14s^2 + 37s + 20} \\[10pt]
+\dfrac{-4}{s^3 - 14s^2 + 37s + 20} \\
 \dfrac{-2s + 10}{s^3 - 14s^2 + 37s + 20} &
 \dfrac{s - 3}{s^3 - 14s^2 + 37s + 20} &
 \dfrac{s^2 - 4s - 1}{s^3 - 14s^2 + 37s + 20}
@@ -635,7 +635,7 @@ $$
 
 $$
 X(s) = \Phi(s) BU(s)  
-Y(s) = C\Phi(s) BU(s)
+Y(s) = C \Phi(s) BU(s)
 $$  
 
 $$
