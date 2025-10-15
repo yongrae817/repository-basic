@@ -279,13 +279,17 @@ $$
 
 ---
 
+이때,  
+
 $$
 \dot{x}_3(t) = \dddot{z}(t)
 $$
 
 $$
 \dddot{z}(t) = -5\ddot{z}(t) + 24\dot{z}(t) + r(t)
-$$
+$$  
+
+이므로,
 
 ---
 
@@ -328,9 +332,141 @@ $$
 \frac{Y(s)}{R(s)} = T(s) = \frac{8(s + 5)}{s^3 + 12s^2 + 44s + 48}
 $$
 
-인 시스템에서,
-(a) 상태공간모델을 구하라.
-(b) 상태천이행렬 $\(\Phi(t)\)$를 구하라.
+인 시스템에서,  
+(a) 상태공간모델을 구하라.  
+(b) 상태천이행렬 $\Phi(t)\$를 구하라.
+
+---
+
+## (a) 상태공간모델을 구하라.
+
+전달함수 $T(s)$는 다음과 같이 표현할 수 있다.
+
+$$
+T(s) \= \frac{Y(s)}{R(s)} \= \frac{8(s + 5)}{s^3 + 12s^2 + 44s + 48} \cdot \frac{Z(s)}{Z(s)}  
+\= \frac{8s + 40}{s^3 + 12s^2 + 44s + 48} \cdot \frac{Z(s)}{Z(s)}
+$$
+
+따라서 다음과 같이 볼 수 있다.
+$$
+Y(s) = 8s + 40 Z(s)
+$$
+
+$$
+R(s) = (s^3 + 12s^2 + 44s + 48) Z(s)
+$$
+
+이를 라플라스 역변환하면,
+
+$$
+Y(t) = 8\dot{z}(t) + 40\z(t)
+$$
+
+$$
+R(t) = \dddot{z}(t) + 12\ddot{z}(t) + 44\dot{z}(t) + 48\z(t)
+$$
+
+따라서 다음과 같이 표현할 수 있다.
+
+$$
+\mathbf{x}(t) =
+\begin{bmatrix}
+x_1(t)\\
+x_2(t)\\
+x_3(t)
+\end{bmatrix}
+=\begin{bmatrix}
+z(t)\\
+\dot{x}(t)\\
+\ddot{x}(t)
+\end{bmatrix}
+=\begin{bmatrix}
+z(t)\\
+\dot{z}(t)\\
+\ddot{z}(t)
+\end{bmatrix}
+$$  
+
+---
+
+이때,
+
+$$
+\dot{x}_3(t) = \dddot{z}(t)
+$$
+
+$$
+\dddot{z}(t) = -48\z(t) - 44\dot{z}(t) -12\ddot{z}(t) + r(t)
+$$  
+
+이므로,  
+
+---
+
+출력방정식은 다음과 같다.
+
+$$
+y(t) = 40x_1(t) + 8x_2(t)
+$$
+
+---
+
+상태방정식은 다음과 같다.
+
+$$
+\dot{\mathbf{x}}(t) =
+\begin{bmatrix}
+0 & 1 & 0\\
+0 & 0 & 1\\
+-48 & -44 & -12
+\end{bmatrix}
+\begin{bmatrix}
+x_1(t)\\
+x_2(t)\\
+x_3(t)
+\end{bmatrix}
++
+\begin{bmatrix}
+0\\
+0\\
+1
+\end{bmatrix}r(t)
+$$
+
+---
+
+## (b) 상태천이행렬 $\Phi(t)\$를 구하라.
+
+---
+
+# P3.17
+다음과 같은 상태변수 방정식으로 표현된 시스템이 있다.
+
+$$
+\dot{x}(t) =
+\begin{bmatrix}
+1 & 1 & -1 \\
+4 & 3 & 0 \\
+-2 & 1 & 10
+\end{bmatrix}
+x(t) +
+\begin{bmatrix}
+0 \\
+0 \\
+4
+\end{bmatrix}
+u(t),
+$$
+
+$$
+y(t) =
+\begin{bmatrix}
+1 & 0 & 0
+\end{bmatrix}
+x(t)
+$$
+
+$G(s) = \dfrac{Y(s)}{U(s)}$를 구하라.
 
 ---
 
