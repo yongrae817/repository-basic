@@ -219,7 +219,7 @@ $$
 주어진 블록선도를 등가변환 하면 다음과 같다.
 
 $$
-R(s) \rightarrow \frac{s+2}{s+8}*frac{1}{s-3}*frac{1}{s} \rightarrow Y(s)
+R(s) \rightarrow \frac{s+2}{s+8} *\frac{1}{s-3} *\frac{1}{s} \rightarrow Y(s)
 $$
 
 따라서 폐루프 제어함수는 다음과 같이 구할 수 있다.
@@ -237,7 +237,7 @@ $$
 위에서 구한 전달함수 $T(s)$는 다음과 같이 표현할 수 있다.
 
 $$
-T(s) = \frac{Y(s)}{R(s)} \frac{s + 2}{s^3 + 5s^2 - 24s} \cdot \frac{Z(s)}{Z(s)}
+T(s) = \frac{Y(s)}{R(s)} =\frac{s + 2}{s^3 + 5s^2 - 24s} \cdot \frac{Z(s)}{Z(s)}
 $$
 
 따라서 다음과 같이 볼 수 있다.
@@ -352,8 +352,9 @@ T(s) \= \frac{Y(s)}{R(s)} \= \frac{8(s + 5)}{s^3 + 12s^2 + 44s + 48} \cdot \frac
 $$
 
 따라서 다음과 같이 볼 수 있다.
+
 $$
-Y(s) = 8s + 40 Z(s)
+Y(s) = (8s + 40) Z(s)
 $$
 
 $$
@@ -473,11 +474,11 @@ $$
 따라서,  
 
 $$
-X(s) = [sI - A]^{-1} BR(s) \text{ 에서, } \Phi = [sI - A]^{-1}
+X(s) = [sI - A]^{-1} BR(s) \text{ 에서, } \Phi(s) = [sI - A]^{-1}
 $$  
 
 $$
-sI - A =
+[sI - A] =
 \begin{bmatrix}
 s & 0 & 0 \\
 0 & s & 0 \\
@@ -565,3 +566,81 @@ $G(s) = \dfrac{Y(s)}{U(s)}$를 구하라.
 
 ---
 
+$$
+A = \begin{bmatrix}
+0 & 1 & 0\\
+0 & 0 & 1\\
+-48 & -44 & -12
+\end{bmatrix}, 
+B = \begin{bmatrix}
+0\\
+0\\
+1
+\end{bmatrix}  
+C = \begin{bmatrix}
+0 & 1 & 0
+\end{bmatrix},
+D = 0
+$$  
+
+라고 하자.  
+
+$$
+\dot{x}(t) = Ax(t) + Bu(t)
+$$
+
+$$
+y(t) = Cx(t)
+$$  
+
+이를 라플라스 역변환하면,
+
+$$
+sX(s) = AX(s) + BU(s)
+$$  
+
+$$
+Y(s) = CX(s)
+$$
+
+$$
+[sI-A]X(s) = BU(s)
+$$  
+
+따라서,  
+
+$$
+X(s) = [sI - A]^{-1} BU(s) \text{ 에서, } \Phi(s) = [sI - A]^{-1}
+$$  
+
+$$
+Phi(s) = 
+\begin{bmatrix}
+s-1 & -1 & 1 \\
+-4 & s-3 & 0 \\
+2 & -1 & s-10
+\end{bmatrix}^{-1} =
+\begin{bmatrix}
+\dfrac{s^2 - 13s + 30}{s^3 - 14s^2 + 37s + 20} &
+\dfrac{s - 11}{s^3 - 14s^2 + 37s + 20} &
+\dfrac{-s + 3}{s^3 - 14s^2 + 37s + 20} \\[10pt]
+\dfrac{4s - 40}{s^3 - 14s^2 + 37s + 20} &
+\dfrac{s^2 - 11s + 8}{s^3 - 14s^2 + 37s + 20} &
+\dfrac{-4}{s^3 - 14s^2 + 37s + 20} \\[10pt]
+\dfrac{-2s + 10}{s^3 - 14s^2 + 37s + 20} &
+\dfrac{s - 3}{s^3 - 14s^2 + 37s + 20} &
+\dfrac{s^2 - 4s - 1}{s^3 - 14s^2 + 37s + 20}
+\end{bmatrix}
+$$
+
+$$
+X(s) = \Phi(s) BU(s)  
+Y(s) = C\Phi(s) BU(s)
+$$  
+
+$$
+G(s) = \dfrac{Y(s)}{U(s)} = C\Phi(s) B = 
+\begin{bmatrix}
+\dfrac{- 4s + 12}{s^3 - 14s^2 + 37s + 20}
+\end{bmatrix}
+$$
