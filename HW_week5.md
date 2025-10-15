@@ -233,11 +233,15 @@ $$
 ---
 
 ## (b) 상태변수 모델을 구하고 위상변수형 블록선도를 작성하라.
+
 위에서 구한 전달함수 $T(s)$는 다음과 같이 표현할 수 있다.
+
 $$
-T(s) = \fracY(s)R(s) \frac{s + 2}{s^3 + 5s^2 - 24s} \cdot \frac{Z(s)}{Z(s)}
+T(s) = \frac{Y(s)}{R(s)} \frac{s + 2}{s^3 + 5s^2 - 24s} \cdot \frac{Z(s)}{Z(s)}
 $$
+
 따라서 다음과 같이 볼 수 있다.
+
 $$
 Y(s) = (s + 2) Z(s)
 $$
@@ -359,11 +363,11 @@ $$
 이를 라플라스 역변환하면,
 
 $$
-Y(t) = 8\dot{z}(t) + 40\z(t)
+Y(t) = 8\dot{z}(t) + 40z(t)
 $$
 
 $$
-R(t) = \dddot{z}(t) + 12\ddot{z}(t) + 44\dot{z}(t) + 48\z(t)
+R(t) = \dddot{z}(t) + 12\ddot{z}(t) + 44\dot{z}(t) + 48z(t)
 $$
 
 따라서 다음과 같이 표현할 수 있다.
@@ -396,7 +400,7 @@ $$
 $$
 
 $$
-\dddot{z}(t) = -48\z(t) - 44\dot{z}(t) -12\ddot{z}(t) + r(t)
+\dddot{z}(t) = -48z(t) - 44\dot{z}(t) -12\ddot{z}(t) + r(t)
 $$  
 
 이므로,  
@@ -443,7 +447,7 @@ A = \begin{bmatrix}
 0 & 0 & 1\\
 -48 & -44 & -12
 \end{bmatrix}, 
-\B = \begin{bmatrix}
+B = \begin{bmatrix}
 0\\
 0\\
 1
@@ -463,7 +467,7 @@ sX(s) = AX(s) + BR(s)
 $$  
 
 $$
-/righrarrow/ [sI-A]X(s) = BR(s)
+\Rightarrow [sI-A]X(s) = BR(s)
 $$  
 
 따라서,  
@@ -483,12 +487,48 @@ s & 0 & 0 \\
 0 & 1 & 0 \\
 0 & 0 & 1 \\
 -48 & -44 & -12
-\end{bmatrix}=
-
+\end{bmatrix} =
 \begin{bmatrix}
 s & -1 & 0 \\
 0 & s & -1 \\
 48 & 44 & s + 12
+\end{bmatrix}
+$$  
+
+이므로,
+
+$$
+\Phi(s)\ = \begin{bmatrix}
+s & -1 & 0 \\
+0 & s & -1 \\
+48 & 44 & s+12
+\end{bmatrix}^{-1} =
+\begin{bmatrix}
+\dfrac{s^2 + 12s + 44}{s^3 + 12s^2 + 44s + 48} &
+\dfrac{s + 12}{s^3 + 12s^2 + 44s + 48} &
+\dfrac{1}{s^3 + 12s^2 + 44s + 48} \\
+\dfrac{-48}{s^3 + 12s^2 + 44s + 48} &
+\dfrac{s^2 + 12s}{s^3 + 12s^2 + 44s + 48} &
+\dfrac{s}{s^3 + 12s^2 + 44s + 48} \\
+\dfrac{-48s}{s^3 + 12s^2 + 44s + 48} &
+\dfrac{-44s - 48}{s^3 + 12s^2 + 44s + 48} &
+\dfrac{s^2}{s^3 + 12s^2 + 44s + 48} \\
+\end{bmatrix}
+$$  
+
+이를 라플라스 역변환 하면,
+
+$$
+\Phi(t)\ = \begin{bmatrix}
+3e^{-2t} - 3e^{-4t} + e^{-6t} &
+\frac{5}{4}e^{-2t} - 2e^{-4t} + \frac{3}{4}e^{-6t} &
+\frac{1}{8}e^{-2t} - \frac{1}{4}e^{-4t} + \frac{1}{8}e^{-6t} \\
+-6e^{-2t} + 12e^{-4t} - 6e^{-6t} &
+-\frac{5}{2}e^{-2t} + 8e^{-4t} - \frac{9}{2}e^{-6t} &
+-\frac{1}{4}e^{-2t} + e^{-4t} - \frac{3}{4}e^{-6t} \\
+12e^{-2t} - 48e^{-4t} + 36e^{-6t} &
+5e^{-2t} - 32e^{-4t} + 27e^{-6t} &
+\frac{1}{2}e^{-2t} - 4e^{-4t} + \frac{9}{2}e^{-6t}
 \end{bmatrix}
 $$
 
