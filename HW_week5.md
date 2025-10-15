@@ -437,6 +437,60 @@ $$
 
 ## (b) 상태천이행렬 $\Phi(t)\$를 구하라.
 
+$$
+A = \begin{bmatrix}
+0 & 1 & 0\\
+0 & 0 & 1\\
+-48 & -44 & -12
+\end{bmatrix}, 
+\B = \begin{bmatrix}
+0\\
+0\\
+1
+\end{bmatrix}
+$$  
+
+라고 하면,  
+
+$$
+\dot{\mathbf{x}}(t) = Ax(t) + Br(t)
+$$  
+
+이 상태공간방정식을 라플라스 변환 하면,  
+
+$$
+sX(s) = AX(s) + BR(s)
+$$  
+
+$$
+/righrarrow/ [sI-A]X(s) = BR(s)
+$$  
+
+따라서,  
+
+$$
+X(s) = [sI - A]^{-1} BR(s) \text{ 에서, } \Phi = [sI - A]^{-1}
+$$  
+
+$$
+sI - A =
+\begin{bmatrix}
+s & 0 & 0 \\
+0 & s & 0 \\
+0 & 0 & s
+\end{bmatrix} -
+\begin{bmatrix}
+0 & 1 & 0 \\
+0 & 0 & 1 \\
+-48 & -44 & -12
+\end{bmatrix}=
+
+\begin{bmatrix}
+s & -1 & 0 \\
+0 & s & -1 \\
+48 & 44 & s + 12
+\end{bmatrix}
+$$
 
 ---
 
