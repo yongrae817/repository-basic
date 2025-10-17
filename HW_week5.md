@@ -232,7 +232,7 @@ $$
 따라서, 전달함수는 다음과 같다.
 
 $$
-T(s) = \frac{ \frac{s + 2}{s^3 + 5s^2 - 24s}}{1+ \frac{s + 2}{s^3 + 5s^2 - 24s}} = 
+T(s) = \frac{ \frac{s + 2}{s^3 + 5s^2 - 24s}}{1+ \frac{s + 2}{s^3 + 5s^2 - 24s}} = \frac{s+2}{s^3 + 5s^2 - 23s + 2}
 $$
 
 ---
@@ -242,7 +242,7 @@ $$
 위에서 구한 전달함수 $T(s)$는 다음과 같이 표현할 수 있다.
 
 $$
-T(s) = \frac{Y(s)}{R(s)} =\frac{s + 2}{s^3 + 5s^2 - 24s} \cdot \frac{Z(s)}{Z(s)}
+T(s) = \frac{Y(s)}{R(s)} =\frac{s+2}{s^3 + 5s^2 - 23s + 2} \cdot \frac{Z(s)}{Z(s)}
 $$
 
 따라서 다음과 같이 볼 수 있다.
@@ -252,7 +252,7 @@ Y(s) = (s + 2) Z(s)
 $$
 
 $$
-R(s) = (s^3 + 5s^2 - 24s) Z(s)
+R(s) = (s^3 + 5s^2 - 23s + 2) Z(s)
 $$
 
 이를 라플라스 역변환하면,
@@ -262,7 +262,7 @@ Y(t) = \ddot{z}(t) + 2\dot{z}(t)
 $$
 
 $$
-R(t) = \dddot{z}(t) + 5\ddot{z}(t) - 24\dot{z}(t)
+R(t) = \dddot{z}(t) + 5\ddot{z}(t) - 23\dot{z}(t) + 2z(t)
 $$
 
 따라서 다음과 같이 표현할 수 있다.
@@ -295,7 +295,7 @@ $$
 $$
 
 $$
-\dddot{z}(t) = -5\ddot{z}(t) + 24\dot{z}(t) + r(t)
+\dddot{z}(t) = -5\ddot{z}(t) + 23\dot{z}(t) - 2z(t) + r(t)
 $$  
 
 이므로,
@@ -317,7 +317,7 @@ $$
 \begin{bmatrix}
 0 & 1 & 0\\
 0 & 0 & 1\\
-0 & 24 & -5
+-2 & 23 & -5
 \end{bmatrix}
 \begin{bmatrix}
 x_1(t)\\
