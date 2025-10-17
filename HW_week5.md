@@ -222,12 +222,17 @@ $$
 R(s) \rightarrow \frac{s+2}{s+8} *\frac{1}{s-3} *\frac{1}{s} \rightarrow Y(s)
 $$
 
-따라서 폐루프 제어함수는 다음과 같이 구할 수 있다.
+$$
+R(s) \rightarrow 
+ \frac{s + 2}{(s + 8)(s - 3)s} 
+= \frac{s + 2}{s^3 + 5s^2 - 24s} 
+\rightarrow Y(s)
+$$
+
+따라서, 전달함수는 다음과 같다.
 
 $$
-T(s) = \frac{Y(s)}{R(s)} 
-= \frac{s + 2}{(s + 8)(s - 3)s} 
-= \frac{s + 2}{s^3 + 5s^2 - 24s}
+T(s) = \frac{ \frac{s + 2}{s^3 + 5s^2 - 24s}}{1+ \frac{s + 2}{s^3 + 5s^2 - 24s}} = 
 $$
 
 ---
