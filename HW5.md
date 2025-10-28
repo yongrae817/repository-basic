@@ -1,8 +1,8 @@
-# 📘 5주차 강의 정리: State-Space Representation
+# 5주차 강의 정리: State-Space Representation
 
 ---
 
-## 1️⃣ State Variable Model
+## 1️.State Variable Model
 
 ### 🧩 시스템 내의 State 정의
 - 시스템의 **상태(state)** 란 시스템 내부의 동적 정보를 나타내는 변수이다.  
@@ -11,7 +11,7 @@
 
 ---
 
-### 🌿 예시: Spring–Mass–Damper System
+### Spring–Mass–Damper System
 
 $$
 M \frac{d^2 y(t)}{dt^2} + b \frac{dy(t)}{dt} + k y(t) = r(t)
@@ -39,9 +39,9 @@ $$
 
 ---
 
-## 2️⃣ State Space Equation
+## 2️.State Space Equation
 
-### 📗 기본형
+### 기본형
 
 $$
 \dot{x}(t) = A x(t) + B u(t)
@@ -59,7 +59,7 @@ $$
 
 ---
 
-### 🔄 상태공간 해 (State Transition)
+### 상태공간 해 (State Transition)
 
 Laplace domain에서,
 
@@ -78,7 +78,7 @@ $$
 
 ---
 
-## 3️⃣ State Transition Matrix
+## 3️.State Transition Matrix
 
 - 1차 시스템의 경우:  
 
@@ -94,7 +94,7 @@ $$
 
 ---
 
-## 4️⃣ Summary
+## 4️.Summary
 
 - **State = 시스템 내부 상태**  
 - **State를 통해 시스템의 동특성을 수학적으로 표현할 수 있다.**  
@@ -108,7 +108,7 @@ $$
 
 ---
 
-## 5️⃣ State 선정 방법
+## 5️.State 선정 방법
 
 ### 🔸 Phase Variable Canonical Form
 전달함수(Transfer Function)를 **State-Space Form**으로 변환하는 표준 방법.
@@ -119,7 +119,7 @@ $$
 
 ---
 
-### 📐 상태변수 설정
+### 상태변수 설정
 
 $$
 x_1(t) = z(t), \quad x_2(t) = \dot{z}(t), \quad x_3(t) = \ddot{z}(t), \quad x_4(t) = \dddot{z}(t)
@@ -157,7 +157,7 @@ $$
 
 ---
 
-## 🌟 정리 요약
+## 정리 요약
 
 | 구분 | 의미 |
 |------|------|
